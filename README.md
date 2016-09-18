@@ -1,0 +1,2 @@
+# artifactory
+Maven repository
