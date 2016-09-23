@@ -19,14 +19,14 @@
 
 	<distributionManagement>
 		<repository>
-			<id>artifactory</id>
+			<id>armadillo</id>
 			<name>GitHub Artifactory Releases Maven Repository</name>
-			<url>https://github.com/piotrlechowicz/artifactory/releases</url>
+			<url>https://github.com/piotrlechowicz/armadillo/releases</url>
 		</repository>
 		<snapshotRepository>
-			<id>snapshot-artifactory</id>
+			<id>armadillo-snapshots</id>
 			<name>GitHub Artifactory Snapshot Maven Repository</name>
-			<url>https://github.com/piotrlechowicz/artifactory/snapshots</url>
+			<url>https://github.com/piotrlechowicz/armadillo/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 
