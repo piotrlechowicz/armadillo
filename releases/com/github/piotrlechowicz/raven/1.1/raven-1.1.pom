@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.piotrlechowicz</groupId>
+    <artifactId>raven</artifactId>
+    <version>1.1</version>
+    <packaging>jar</packaging>
+    <name>Raven</name>
+
+    <developers>
+        <developer>
+            <id>piotrlechowicz</id>
+            <email>piotr.tobiasz.lechowicz@gmail.com</email>
+        </developer>
+    </developers>
+
+	<distributionManagement>
+		<repository>
+			<id>armadillo</id>
+			<name>GitHub Armadillo Releases Maven Repository</name>
+			<url>https://github.com/piotrlechowicz/armadillo/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>armadillo-snapshots</id>
+			<name>GitHub Armadillo Snapshot Maven Repository</name>
+			<url>https://github.com/piotrlechowicz/armadillo/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+    <properties>
+        <jdk.version>1.8</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compilerplugin.version>3.1</maven.compilerplugin.version>
+        <surefire.plugin.version>2.19.1</surefire.plugin.version>
+
+        <junit.version>4.4</junit.version>
+        <log4j.version>1.2.17</log4j.version>
+        <mockito.version>1.10.19</mockito.version>
+        <commons-io.version>2.4</commons-io.version>
+    </properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+			<version>1.6.4</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.hamcrest</groupId>
+					<artifactId>hamcrest-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>1.6.4</version>
+			<scope>test</scope>
+		</dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compilerplugin.version}</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
